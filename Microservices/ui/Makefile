@@ -9,7 +9,7 @@ build-docker: build-package
 run-docker:
 	-docker stop rvstore-ui
 	-docker rm rvstore-ui
-	docker run -d -p 80:80 --name rvstore-ui vergeops/k8s-rvstore-ui:1.0
+	docker run -p 80:80 --name rvstore-ui --net k8s-rvstore vergeops/k8s-rvstore-ui:1.0
 	
 push-docker:
 	docker push vergeops/k8s-rvstore-ui:1.0
