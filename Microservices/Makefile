@@ -9,3 +9,8 @@ run-docker: stop-docker
 stop-docker:
 	-docker stop rvstore-db
 	-docker rm rvstore-db
+
+run-k8s:
+	kubectl apply -f k8s/configmap.yaml
+	kubectl apply -f k8s/deployment.yaml
+	kubectl apply -f k8s/service.yaml

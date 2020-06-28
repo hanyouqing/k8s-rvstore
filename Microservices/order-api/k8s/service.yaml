@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rvstore-order-api
+spec:
+  type: ClusterIP
+  selector:
+    app: order-api
+  ports:
+  - protocol: TCP
+    port: 9002

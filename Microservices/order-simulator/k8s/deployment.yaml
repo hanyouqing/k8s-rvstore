@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-simulator-deployment
+  labels:
+    app: order-simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-simulator
+  template:
+    metadata:
+      labels:
+        app: order-simulator
+    spec:
+      containers:
+      - name: rvstore-order-simulator
+        image: vergeops/k8s-rvstore-order-simulator:1.0
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: workload-config

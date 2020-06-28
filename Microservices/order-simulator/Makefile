@@ -15,3 +15,6 @@ stop-docker:
 
 push-docker:
 	docker push vergeops/k8s-rvstore-order-simulator:1.0
+
+run-k8s:
+	kubectl apply -f k8s/deployment.yaml
