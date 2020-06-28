@@ -6,4 +6,4 @@ spring:
   data:
     mongodb:
       database: orders
-      uri: mongodb://mongoadmin:secret@localhost:27017
+      uri: mongodb://mongoadmin:secret@rvstore-db:27017
